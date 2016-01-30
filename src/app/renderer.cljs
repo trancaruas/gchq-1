@@ -90,29 +90,3 @@
 ;; rule check alg
 ;; (map first (row 4))
 ;; (4 5 13 14 22)
-
-
-;; * quil
-;; (defn draw []
-;;   (q/background 200)
-;;   (q/fill 0)
-;;   (q/rect 100 100 30 30)
-;;   (q/ellipse 56 46 55 55))
-
-;; (q/defsketch sketch-square
-;;   :host "canvas-id"
-;;   :draw draw
-;; ;;  :features [:no-start]
-;;   :size [(- (.-innerWidth js/window) 20) (- (.-innerHeight js/window) 20)])
-
-;; (defn draw []
-;;   (q/stroke (q/random 255))
-
-;;   (let [diam (q/random 100)
-;;         x    (q/random (q/width))
-;;         y    (q/random (q/height))]
-;;     (q/ellipse x y diam diam)))
-
-
-; 25x25
-
