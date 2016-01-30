@@ -15,8 +15,8 @@
   at compile time using the `:clojure-defines` compiler option."
   [window]
   (if dev?
-      (.loadUrl window (str "file://" js/__dirname "/../../index.html"))
-      (.loadUrl window (str "file://" js/__dirname "/index.html"))))
+      (.loadURL window (str "file://" js/__dirname "/../../index.html"))
+      (.loadURL window (str "file://" js/__dirname "/index.html"))))
 
 (def main-window (atom nil))
 
@@ -24,7 +24,7 @@
   (BrowserWindow. #js {:width w :height h :frame frame? :show show?}))
 
 (defn init-browser []
-  (reset! main-window (mk-window 800 600 true true))
+  (reset! main-window (mk-window 1024 768 true true))
   (load-page @main-window)
   (if dev? (.openDevTools @main-window))
   (.on @main-window "closed" #(reset! main-window nil)))
