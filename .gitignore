@@ -3,3 +3,6 @@ out/
 package.json
 target/
 *~
+.nrepl-history
+hs_err_*.log
+test-file

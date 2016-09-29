@@ -2,13 +2,14 @@
  :source-paths    #{"src"}
  :resource-paths  #{"resources"}
  :dependencies '[[org.clojure/clojurescript "1.7.228"]
-                 [adzerk/boot-cljs          "1.7.48-3"        :scope "test"]
-                 [adzerk/boot-cljs-repl     "0.1.10-SNAPSHOT" :scope "test"]
-                 [adzerk/boot-reload        "0.3.2-SNAPSHOT"  :scope "test"]
-                 [weasel                    "0.7.0"           :scope "test"]
-                 [org.clojure/tools.nrepl   "0.2.12"          :scope "test"]
-                 [com.cemerick/piggieback   "0.2.1"           :scope "test"]
-                 [cljsjs/fabric             "1.5.0-0"]])
+                 [adzerk/boot-cljs          "1.7.228-1" :scope "test"]
+                 [adzerk/boot-cljs-repl     "0.3.0"     :scope "test"]
+                 [adzerk/boot-reload        "0.4.5"     :scope "test"]
+                 [weasel                    "0.7.0"     :scope "test"]
+                 [org.clojure/tools.nrepl   "0.2.12"    :scope "test"]
+                 [com.cemerick/piggieback   "0.2.1"     :scope "test"]
+                 [cljsjs/fabric             "1.5.0-0"]
+                 [fipp                      "0.6.4"]])
 
 (require
  '[adzerk.boot-cljs      :refer [cljs]]
@@ -25,7 +26,7 @@
   (comp 
         (speak)
         (watch)
-;;        (serve)
+        ;; (serve)
         (cljs-repl :ids #{"renderer"})
         (reload    :ids #{"renderer"}
                    :on-jsload 'app.renderer/init)

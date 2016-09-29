@@ -21,10 +21,10 @@
 (def main-window (atom nil))
 
 (defn mk-window [w h frame? show?]
-  (BrowserWindow. #js {:width w :height h :frame frame? :show show?}))
+  (BrowserWindow. #js {:width w :height h :frame frame? :show show? :title "GCHQ Solver"}))
 
 (defn init-browser []
-  (reset! main-window (mk-window 1024 768 true true))
+  (reset! main-window (mk-window 768 768 true true))
   (load-page @main-window)
   (if dev? (.openDevTools @main-window))
   (.on @main-window "closed" #(reset! main-window nil)))
